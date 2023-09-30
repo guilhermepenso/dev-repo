@@ -63,7 +63,7 @@ section#flower > p {
 }
 
 section#letter {
-    background: url(img/background002.jpg center center no-repeat fixed;
+    background: url(img/background002.jpg) center center no-repeat fixed;
     background-size: cover;
 }
 
