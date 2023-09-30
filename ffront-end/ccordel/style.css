@@ -51,7 +51,7 @@ section > p {
 }
 
 section#flower {
-    background: url(../pacote-d012/imagens/background001.jpg) center center no-repeat fixed;
+    background: url(img/background001.jpg) center center no-repeat fixed;
     background-size: cover;
 }
 
@@ -63,7 +63,7 @@ section#flower > p {
 }
 
 section#letter {
-    background: url(../pacote-d012/imagens/background002.jpg) center center no-repeat fixed;
+    background: url(img/background002.jpg center center no-repeat fixed;
     background-size: cover;
 }
 
