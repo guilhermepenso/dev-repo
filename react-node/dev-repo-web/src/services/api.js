@@ -13,3 +13,9 @@ export const getRepositories = async(userId, query) => {
 
     return api.get(url);
 };
+
+export const createRepository = async (userId, repositoryUrl) => {
+    const url = `/users/${userId}/repositories/`;
+
+    return api.post(url, { name: 'facebook/react', url: repositoryUrl });
+}

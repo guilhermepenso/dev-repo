@@ -30,7 +30,7 @@ const Repositories = ({ repositories, onDeleteRepo, onNewRepo }) => {
                     id="new-repo" 
                     value={newRepo}
                     onChange={(e) => setNewRepo(e.target.value)}/>
-                    <button onClick={onNewRepo(newRepo)}>Adicionar</button>
+                    <button onClick={() => onNewRepo(newRepo)}>Adicionar</button>
                 </div>
             </div>
     )
