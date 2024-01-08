@@ -5,6 +5,7 @@ class RepositoriesController {
     async index(req, res) {
         try {
             const { user_id } = req.params;
+            const { q } = req.query;
 
             const user = await User.findById(user_id);
 
@@ -12,8 +13,15 @@ class RepositoriesController {
                 return res.status(404).json();
             }
 
+            let query = {};
+
+            if(q) {
+                query = { url: {$regex: q} }
+            }
+
             const repositories = await Repository.find({
-                userId: user_id
+                userId: user_id,
+                ...query
             });
 
             return res.json(repositories);
@@ -78,7 +86,7 @@ class RepositoriesController {
         
             const repository = await Repository.findOne({
                 userId: user_id,
-                id
+                _id: id
             });
 
             if (!repository) {

@@ -48,7 +48,6 @@ class UsersController {
                     .json({ message: `User ${email} already exists.` });
             }
 
-            // criptografa o password
             const encryptedPassword = await createPasswordHash(password)
 
             const newUser = await User.create({ 

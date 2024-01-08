@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+
+import { AuthContext } from '../../contexts/auth';
 
 import "./style.css";
 
 const LoginPage = () => {
+    const { login } = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
         console.log('email', email);
         console.log('password', password);
-        console.log('login');
+        login(email, password);
     }
 
     return (
@@ -28,8 +31,8 @@ const LoginPage = () => {
                 <div className="field">
                     <label htmlFor="password">Senha:</label>
                     <input 
-                    type="passowrd" 
-                    name="passowrd" 
+                    type="password" 
+                    name="password" 
                     id="password" 
                     value={password}
                     onChange={(e) => setPassword(e.target.value) }/>
